@@ -8,7 +8,10 @@ const letters = [
   There’s something about your presence that makes even the ordinary feel magical.<br>
   Just hearing your voice or seeing your name pop up makes my heart smile.<br>
   I don’t need grand adventures. I just need you next to me.<br>
-  Thank you for being my little piece of magic in this world.`,
+  Thank you for being you as you are Madiha!!!!
+  
+  "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." 
+  (Surah Ash-Sharh 94:5-6)`,
 
   `💌 <strong>Day 2 – “A Memory I Love”</strong><br>
   There’s this moment I keep replaying in my head. Us, laughing uncontrollably over something silly.<br>
