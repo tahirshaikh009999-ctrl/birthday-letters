@@ -6,8 +6,7 @@ const letters = [
   `💌 <strong>Day 1 – “The Magic of You”</strong><br>
   Ever since you came into my life, everything feels a little brighter, a little softer, and a lot more meaningful.<br>
   There’s something about your presence that makes even the ordinary feel magical.<br>
-  Just hearing your voice or seeing your name pop up makes my heart smile.<br>
-  I don’t need grand adventures. I just need you next to me.<br>
+  Just hearing your voice or seeing your name pop up makes me smile.<br>
   Thank you for being you Madiha!!!!
   <br>
   <br>
