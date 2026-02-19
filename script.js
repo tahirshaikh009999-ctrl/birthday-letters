@@ -3,8 +3,12 @@ const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 
 // --- Sound Configuration ---
-const popSound = new Audio('confetti_pop.mp3'); 
-const cheerSound = new Audio('cheers.mp3');
+const popSound = new Audio('https://cdn.pixabay.com/audio/2022/03/15/audio_2475659f81.mp3'); 
+const cheerSound = new Audio('https://cdn.pixabay.com/audio/2021/08/04/audio_0625d15d79.mp3');
+
+// Adjust volumes (Cheer is usually louder than a pop)
+popSound.volume = 0.7;
+cheerSound.volume = 0.4;
 
 const letters = [
   `💌 <strong>Day 1 – “The Magic of You”</strong><br>
@@ -12,7 +16,8 @@ const letters = [
   There’s something about your presence that makes even the ordinary feel magical.<br>
   Just hearing your voice or seeing your name pop up makes me smile.<br>
   Thank you for being you Madiha!!!!
-  <br><br><br>
+  <br><br><br><br>
+  Kuch chotasa tumhare liye <br>
   "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." <br>
   (Surah Ash-Sharh 94:5-6)`,
 
@@ -79,19 +84,22 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
 
   if (today >= unlockDate) {
     btn.addEventListener("click", () => {
-      // Play Sounds
+      // 1. Play Sounds (Reset to start first so it plays every click)
+      popSound.currentTime = 0;
+      cheerSound.currentTime = 0;
       popSound.play().catch(e => console.log("Audio play blocked"));
       cheerSound.play().catch(e => console.log("Audio play blocked"));
 
-      // Trigger Confetti
+      // 2. Trigger Confetti
       confetti({
         particleCount: 150,
         spread: 70,
         origin: { y: 0.6 },
-        zIndex: 9999, // Force over modal
+        zIndex: 9999, 
         colors: ['#ff0000', '#ff69b4', '#ffffff']
       });
 
+      // 3. Open Modal
       letterText.innerHTML = letters[day - 1];
       modal.classList.remove("hidden");
     });
@@ -110,12 +118,14 @@ closeBtn.addEventListener("click", () => {
 // Day 7 Egg Logic
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('egg')) {
+    popSound.currentTime = 0;
+    popSound.play();
     confetti({
       particleCount: 200,
       spread: 360,
       zIndex: 9999,
       origin: { y: 0.5 }
     });
-    alert('Gift for the best girl! 🎁');
+    alert('Gift for the best bf! 🎁');
   }
 });
