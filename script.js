@@ -57,8 +57,8 @@ const letters = [
   <span class="egg" data-egg="7" style="font-size:2rem;cursor:pointer;">🎁</span>`
 ];
 
-const startDate = new Date(2026, 7, 1); // 8월은 7 (0-indexed)
-const day7UnlockDate = new Date(2026, 7, 7);
+const unlockDate = new Date(2026, 1, 19); // 8월은 7 (0-indexed)
+const day7UnlockDate = new Date(2026, 1, 26);
 const today = new Date();
 today.setHours(0, 0, 0, 0); // 시간 초기화 (로컬 기준)
 
