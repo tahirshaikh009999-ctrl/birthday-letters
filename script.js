@@ -10,6 +10,9 @@ const cheerSound = new Audio('https://www.soundjay.com/misc/sounds/cheering-01.m
 popSound.volume = 0.7;
 cheerSound.volume = 0.4;
 
+popSound.load();
+cheerSound.load();
+
 const letters = [
   `💌 <strong>Day 1 – “The Magic of You”</strong><br>
   Ever since you came into my life, everything feels a little brighter, a little softer, and a lot more meaningful.<br>
