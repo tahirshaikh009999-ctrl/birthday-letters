@@ -19,8 +19,7 @@ const letters = [
   There’s something about your presence that makes even the ordinary feel magical.<br>
   Just hearing your voice or seeing your name pop up makes me smile.<br>
   Thank you for being you Madiha!!!!
-  <br><br><br><br>
-  Kuch chotasa tumhare liye <br>
+  <br><br><br>
   "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." <br>
   (Surah Ash-Sharh 94:5-6)`,
 
