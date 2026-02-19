@@ -47,7 +47,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9998; /* Lowered slightly to let confetti through */
+  z-index: 0; /* Lowered slightly to let confetti through */
 }
 
 .modal.hidden {
