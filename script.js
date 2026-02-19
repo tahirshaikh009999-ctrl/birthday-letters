@@ -9,8 +9,10 @@ const letters = [
   Just hearing your voice or seeing your name pop up makes my heart smile.<br>
   I don’t need grand adventures. I just need you next to me.<br>
   Thank you for being you as you are Madiha!!!!
-  
-  "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." 
+  <br>
+  <br>
+  <br>
+  "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." <br>
   (Surah Ash-Sharh 94:5-6)`,
 
   `💌 <strong>Day 2 – “A Memory I Love”</strong><br>
