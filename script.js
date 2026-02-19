@@ -3,8 +3,8 @@ const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 
 // --- Sound Configuration ---
-const popSound = new Audio('https://cdn.pixabay.com/audio/2022/03/15/audio_2475659f81.mp3'); 
-const cheerSound = new Audio('https://cdn.pixabay.com/audio/2021/08/04/audio_0625d15d79.mp3');
+const popSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3'); 
+const cheerSound = new Audio('https://www.soundjay.com/misc/sounds/cheering-01.mp3');
 
 // Adjust volumes (Cheer is usually louder than a pop)
 popSound.volume = 0.7;
