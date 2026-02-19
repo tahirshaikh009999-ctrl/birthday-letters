@@ -68,6 +68,7 @@ const letters = [
   <span class="egg" data-egg="7" style="font-size:2rem;cursor:pointer;">🎁</span>`
 ];
 
+
 // Date Config (Feb = Index 1)
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
@@ -87,13 +88,21 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
 
   if (today >= unlockDate) {
     btn.addEventListener("click", () => {
-      // 1. Play Sounds (Reset to start first so it plays every click)
+      // FIX: Reset audio to start and play immediately on click
       popSound.currentTime = 0;
       cheerSound.currentTime = 0;
-      popSound.play().catch(e => console.log("Audio play blocked"));
-      cheerSound.play().catch(e => console.log("Audio play blocked"));
 
-      // 2. Trigger Confetti
+      // Wrap in a promise to handle "Autoplay" restrictions gracefully
+      const playPop = popSound.play();
+      const playCheer = cheerSound.play();
+
+      [playPop, playCheer].forEach(p => {
+          if (p !== undefined) {
+              p.catch(() => console.log("Audio waiting for stronger user interaction..."));
+          }
+      });
+
+      // Trigger Confetti
       confetti({
         particleCount: 150,
         spread: 70,
@@ -102,7 +111,7 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
         colors: ['#ff0000', '#ff69b4', '#ffffff']
       });
 
-      // 3. Open Modal
+      // Show the letter
       letterText.innerHTML = letters[day - 1];
       modal.classList.remove("hidden");
     });
@@ -122,7 +131,7 @@ closeBtn.addEventListener("click", () => {
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('egg')) {
     popSound.currentTime = 0;
-    popSound.play();
+    popSound.play().catch(() => {});
     confetti({
       particleCount: 200,
       spread: 360,
