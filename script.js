@@ -8,9 +8,7 @@ const letters = [
   There’s something about your presence that makes even the ordinary feel magical.<br>
   Just hearing your voice or seeing your name pop up makes me smile.<br>
   Thank you for being you Madiha!!!!
-  <br>
-  <br>
-  <br>
+  <br><br><br>
   "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." <br>
   (Surah Ash-Sharh 94:5-6)`,
 
@@ -58,14 +56,17 @@ const letters = [
   <span class="egg" data-egg="7" style="font-size:2rem;cursor:pointer;">🎁</span>`
 ];
 
-const startDate = new Date(2026, 1, 20); // 8월은 7 (0-indexed)
+// Date Configuration (Month is 0-indexed: 1 = February)
+const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
 const today = new Date();
-today.setHours(0, 0, 0, 0); // 시간 초기화 (로컬 기준)
+today.setHours(0, 0, 0, 0); 
 
+// Open Letter Logic with Confetti
 document.querySelectorAll(".day-btn").forEach((btn) => {
   const day = parseInt(btn.dataset.day);
   let unlockDate;
+  
   if (day === 7) {
     unlockDate = day7UnlockDate;
   } else {
@@ -75,6 +76,14 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
 
   if (today >= unlockDate) {
     btn.addEventListener("click", () => {
+      // Trigger Confetti
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#ff0000', '#ff69b4', '#ffffff']
+      });
+
       letterText.innerHTML = letters[day - 1];
       modal.classList.remove("hidden");
     });
@@ -90,9 +99,15 @@ closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
 });
 
-// Day 7 이스터에그 클릭 이벤트
+// Day 7 Easter Egg Confetti
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('egg')) {
+    confetti({
+      particleCount: 200,
+      velocity: 30,
+      spread: 360,
+      origin: { y: 0.5 }
+    });
     alert('Gift for the best bf! 🎁');
   }
 });
@@ -108,37 +123,37 @@ function loadComments() {
   commentList.innerHTML = '';
   comments.forEach((item, idx) => {
     const li = document.createElement('li');
+    
     const authorSpan = document.createElement('span');
     authorSpan.className = 'comment-author';
     authorSpan.textContent = item.author || 'Anonymous';
     li.appendChild(authorSpan);
+    
     const textDiv = document.createElement('div');
     textDiv.textContent = item.text;
     textDiv.className = 'comment-text';
     li.appendChild(textDiv);
+    
     const timeSpan = document.createElement('span');
     timeSpan.className = 'comment-time';
     timeSpan.textContent = item.time;
     li.appendChild(timeSpan);
 
-    // Actions
     const actionsDiv = document.createElement('div');
     actionsDiv.className = 'comment-actions';
-    // Edit button
+    
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.onclick = function() {
-      // Edit mode
       textDiv.style.display = 'none';
       const editInput = document.createElement('input');
       editInput.type = 'text';
       editInput.value = item.text;
       editInput.maxLength = 100;
-      editInput.style.fontSize = '0.95rem';
-      editInput.style.marginBottom = '0.2rem';
       li.insertBefore(editInput, timeSpan);
       editBtn.style.display = 'none';
       deleteBtn.style.display = 'none';
+      
       const saveBtn = document.createElement('button');
       saveBtn.textContent = 'Save';
       saveBtn.onclick = function() {
@@ -151,8 +166,7 @@ function loadComments() {
       };
       actionsDiv.appendChild(saveBtn);
     };
-    actionsDiv.appendChild(editBtn);
-    // Delete button
+    
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.onclick = function() {
@@ -160,6 +174,8 @@ function loadComments() {
       localStorage.setItem('comments', JSON.stringify(comments));
       loadComments();
     };
+    
+    actionsDiv.appendChild(editBtn);
     actionsDiv.appendChild(deleteBtn);
     li.appendChild(actionsDiv);
     commentList.appendChild(li);
