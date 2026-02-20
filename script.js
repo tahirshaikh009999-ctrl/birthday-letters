@@ -25,10 +25,14 @@ const letters = [
 
   `💌 <strong>Day 2 – “A Memory I Love”</strong><br>
   There’s this moment I keep replaying in my head. Us, laughing uncontrollably over something silly.<br>
-  I don’t even remember what it was, but I remember the way I felt: completely happy, completely safe.<br>
+  I remember what it was your way of saying shimpy on the beach when we were collecting shells, but I remember the way I felt: completely happy, completely safe.<br>
   You make memories that don’t fade, they stay with me like warm light.<br>
   Even on hard days, I think of those times and I feel okay again.<br>
-  Thank you for giving me those pieces of forever.`,
+  Thank you for giving me those pieces.
+  
+  <br>
+  <br>
+  'If you are grateful, I will surely increase you [in favor]; <br>Surah Ibrahim [14:7]`,
 
   `💌 <strong>Day 3 – “For the Days That Feel Heavy”</strong><br>
   If today feels hard, please remember: you don’t have to carry it all alone.<br>
