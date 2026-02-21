@@ -198,3 +198,9 @@ canvas {
   .days .row { flex-wrap: wrap; }
   .modal-content { max-width: 98%; }
 }
+
+@media (max-width: 600px) {
+  #letter-text {
+    margin-top: 15px; /* Gives the 'X' button its own space */
+  }
+}
