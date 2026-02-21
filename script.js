@@ -1,7 +1,9 @@
 const modal = document.getElementById("letter-modal");
 const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
-
+const videoModal = document.getElementById("video-modal");
+const mainVideo = document.getElementById("main-video");
+const closeVideoBtn = document.getElementById("close-video-btn");
 // --- Sound Configuration ---
 const popSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3'); 
 const cheerSound = new Audio('https://www.soundjay.com/misc/sounds/cheering-01.mp3');
@@ -158,4 +160,20 @@ document.addEventListener('click', function(e) {
     });
     alert('Gift for the best bf! 🎁');
   }
+});
+
+
+// Use event delegation to catch the click on the "Watch Video" button
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'view-video-btn') {
+    videoModal.classList.remove("hidden");
+    mainVideo.play();
+  }
+});
+
+// Close video modal and stop playback
+closeVideoBtn.addEventListener("click", () => {
+  videoModal.classList.add("hidden");
+  mainVideo.pause();
+  mainVideo.currentTime = 0;
 });
