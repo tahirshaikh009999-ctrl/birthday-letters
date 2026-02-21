@@ -119,6 +119,13 @@ h1 {
   margin-top: 0.3rem;
 }
 
+
+#letter-text video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+}
 /* === Confetti Layer Fix === */
 canvas {
   z-index: 9999 !important;
