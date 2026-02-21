@@ -45,7 +45,14 @@ const letters = [
   <br>
   <br>
   "Allah does not burden a soul beyond that it can bear."<br> 
-  Surah Al-Baqarah (2:286)`,
+  Surah Al-Baqarah (2:286)
+  <br>
+  <div style="margin: 20px 0;">
+    <video controls width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      <source src="YOUR_VIDEO_FILE.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>`,
 
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
   I don’t say this enough, but thank you.<br>
@@ -132,8 +139,13 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
   }
 });
 
+// closeBtn.addEventListener("click", () => {
+//   modal.classList.add("hidden");
+// });
 closeBtn.addEventListener("click", () => {
   modal.classList.add("hidden");
+  // This line stops any video from playing once the modal is closed
+  letterText.innerHTML = ""; 
 });
 
 // Day 7 Egg Logic
