@@ -32,14 +32,7 @@ const letters = [
   
   <br>
   <br>
-  'If you are grateful, I will surely increase you [in favor]; <br>Surah Ibrahim [14:7]
-  <br>
-  <div style="margin: 20px 0;">
-    <video controls width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <source src="video/video2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>`,
+  'If you are grateful, I will surely increase you [in favor]; <br>Surah Ibrahim [14:7]`,
 
     `💌 <strong>Day 3 – “For the Days That Feel Heavy”</strong><br>
   If today feels hard, please remember: you don’t have to carry it all alone.<br>
@@ -56,7 +49,7 @@ const letters = [
   <br>
   <div style="margin: 20px 0;">
     <video controls width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <source src="video/video2.mp4" type="video/mp4">
+      <source src="video/video1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>`,
