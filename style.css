@@ -69,7 +69,15 @@ h1 {
 .modal.hidden {
   display: none;
 }
+/* This ensures the video modal always sits on top of everything else */
+#video-modal {
+  z-index: 10000; 
+}
 
+/* Ensure the main letter modal is slightly lower */
+#letter-modal {
+  z-index: 9000;
+}
 .modal-content {
   background: white;
   padding: 2rem;
