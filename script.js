@@ -50,7 +50,7 @@ const letters = [
   Surah Al-Baqarah (2:286)
   <br>
   <button id="view-video-btn" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
-    Click to see a surprise 🎥
+    Core memory🎥
   </button>`,
 
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
@@ -86,7 +86,7 @@ const letters = [
 
 // Date Config (Feb = Index 1)
 // --- Date Config & Manual Override ---
-const manuallyUnlocked = [3, 5]; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
+const manuallyUnlocked = []; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
 
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
