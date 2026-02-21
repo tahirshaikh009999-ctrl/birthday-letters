@@ -86,6 +86,9 @@ const letters = [
 
 
 // Date Config (Feb = Index 1)
+// --- Date Config & Manual Override ---
+const manuallyUnlocked = [3, 5]; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
+
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
 const today = new Date();
@@ -102,23 +105,21 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
     unlockDate.setDate(startDate.getDate() + (day - 1));
   }
 
-  if (today >= unlockDate) {
+  // Check if today is the date OR if the specific day is in our manual list
+  const isUnlocked = (today >= unlockDate) || manuallyUnlocked.includes(day);
+
+  if (isUnlocked) {
+    btn.disabled = false;
+    btn.style.opacity = "1";
+    btn.style.cursor = "pointer";
+    btn.innerText = `Day ${day}`; // Ensures the lock icon is removed
+
     btn.addEventListener("click", () => {
-      // FIX: Reset audio to start and play immediately on click
       popSound.currentTime = 0;
       cheerSound.currentTime = 0;
+      popSound.play().catch(() => {});
+      cheerSound.play().catch(() => {});
 
-      // Wrap in a promise to handle "Autoplay" restrictions gracefully
-      const playPop = popSound.play();
-      const playCheer = cheerSound.play();
-
-      [playPop, playCheer].forEach(p => {
-          if (p !== undefined) {
-              p.catch(() => console.log("Audio waiting for stronger user interaction..."));
-          }
-      });
-
-      // Trigger Confetti
       confetti({
         particleCount: 150,
         spread: 70,
@@ -127,7 +128,6 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
         colors: ['#ff0000', '#ff69b4', '#ffffff']
       });
 
-      // Show the letter
       letterText.innerHTML = letters[day - 1];
       modal.classList.remove("hidden");
     });
