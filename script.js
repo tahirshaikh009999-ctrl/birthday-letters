@@ -34,12 +34,18 @@ const letters = [
   <br>
   'If you are grateful, I will surely increase you [in favor]; <br>Surah Ibrahim [14:7]`,
 
-  `💌 <strong>Day 3 – “For the Days That Feel Heavy”</strong><br>
+    `💌 <strong>Day 3 – “For the Days That Feel Heavy”</strong><br>
   If today feels hard, please remember: you don’t have to carry it all alone.<br>
-  You are stronger than you know, and even when you doubt yourself. I never do.<br>
-  I see your courage in the little things you do every day.<br>
-  I’m always here, quietly believing in you, loudly loving you.<br>
-  You’ve got this. And I’ve got you.`,
+  It’s officially been three months since our first date on 22nd Nov which for the record was pretty magical. Mostly because of your company, but I’ll take some credit for the fun and my vibes.
+  To me you should know that you are stronger than you already know, and even when you doubt in yourself. I never do because I know that you can do it.<br>
+  I see your courage and wit in the little things you do every day.<br>
+  I’m always here, quietly believing in you and sometimes loudly believing in you, supporting you throughout it all.<br>
+  You’ve got this. And You’ve got me always supporting. 
+  <br>
+  <br>
+  <br>
+  "Allah does not burden a soul beyond that it can bear."<br> 
+  Surah Al-Baqarah (2:286)`,
 
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
   I don’t say this enough, but thank you.<br>
