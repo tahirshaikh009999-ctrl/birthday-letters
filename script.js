@@ -177,3 +177,23 @@ closeVideoBtn.addEventListener("click", () => {
   mainVideo.pause();
   mainVideo.currentTime = 0;
 });
+
+// ESC key functionality to close both modals
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+    // Close Letter Modal
+    modal.classList.add("hidden");
+    
+    // Close Video Modal
+    videoModal.classList.add("hidden");
+    
+    // Safety: Stop the video if it was playing
+    if (!mainVideo.paused) {
+      mainVideo.pause();
+      mainVideo.currentTime = 0;
+    }
+
+    // Optional: Clear the innerHTML to stop any other sounds/videos
+    letterText.innerHTML = "";
+  }
+});
