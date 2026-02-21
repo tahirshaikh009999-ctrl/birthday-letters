@@ -128,28 +128,41 @@ h1 {
 }
 
 
-/* Video Modal Specifics */
+/* Updated Video Modal to match letter-modal size */
 .video-container {
-  width: 90%;          /* Uses 90% of screen width on mobile */
-  max-width: 800px;    /* Won't get too big on desktop */
-  padding: 10px;
-  background: #000;    /* Cinematic background */
+  background: white;        /* Match the letter modal background */
+  padding: 1.5rem;         /* Match the letter modal padding */
+  max-width: 90%;          /* Same as your .modal-content */
+  width: 450px;            /* Ideal width for vertical/square mobile videos */
+  border-radius: 16px;     /* Match the letter modal rounding */
+  box-shadow: 0 0 10px #ffcad4;
+  position: relative;      /* Keeps the close button positioned correctly */
 }
 
 #main-video {
-  width: 100%;         /* Fits the modal width */
-  height: auto;        /* Maintains aspect ratio */
+  width: 100%;             /* Fills the container */
+  max-height: 70vh;        /* Prevents video from being taller than the screen */
   display: block;
-  border-radius: 8px;
+  border-radius: 12px;
+  background: black;       /* Black bars only inside the video player if needed */
 }
 
 #close-video-btn {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  position: absolute;      /* Matches the letter modal 'X' placement */
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  margin-bottom: 5px;
+  color: #d67d94;          /* Match your letter modal theme color */
+  z-index: 10;
+}
+
+/* Mobile specific adjustment */
+@media (max-width: 600px) {
+  .video-container {
+    width: 95%;            /* Slightly wider on small phones */
+    padding: 1rem;
+  }
 }
 /* === Confetti Layer Fix === */
 canvas {
