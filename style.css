@@ -120,11 +120,28 @@ h1 {
 }
 
 
-#letter-text video {
-  max-width: 100%;
-  height: auto;
+/* Video Modal Specifics */
+.video-container {
+  width: 90%;          /* Uses 90% of screen width on mobile */
+  max-width: 800px;    /* Won't get too big on desktop */
+  padding: 10px;
+  background: #000;    /* Cinematic background */
+}
+
+#main-video {
+  width: 100%;         /* Fits the modal width */
+  height: auto;        /* Maintains aspect ratio */
   display: block;
-  margin: 15px auto;
+  border-radius: 8px;
+}
+
+#close-video-btn {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 5px;
 }
 /* === Confetti Layer Fix === */
 canvas {
