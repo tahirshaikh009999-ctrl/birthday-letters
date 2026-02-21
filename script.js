@@ -47,12 +47,9 @@ const letters = [
   "Allah does not burden a soul beyond that it can bear."<br> 
   Surah Al-Baqarah (2:286)
   <br>
-  <div style="margin: 20px 0;">
-    <video controls width="100%" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-      <source src="video/video1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>`,
+  <button id="view-video-btn" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
+    Click to see a surprise 🎥
+  </button>`,
 
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
   I don’t say this enough, but thank you.<br>
