@@ -54,11 +54,18 @@ const letters = [
   </button>`,
 
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
-  I don’t say this enough, but thank you.<br>
-  Thank you for being patient, for being kind, for making me feel safe.<br>
-  Thank you for the way you listen, for the way you hold me when I need it most.<br>
-  You’re not just my favorite person. You’re my home.<br>
-  And I’m so lucky I get to love you.`,
+  I just wanted to let you know how much I appreciate having you in my life and I don't say this enough, but thank you. <br> 
+  I cherish all of the moments that we share together, For helping me through the bad times and being there with me celebrate the good times. <br>
+  There aren’t enough words in the dictionary for me to tell you how glad I am to have you in my life. <b>
+  IDK what I did to deserve someone as wonderful as you maybe feeding the strays made it possible, <br>
+  but I am eternally grateful to have your love, support, and your time.
+  <br>
+  <br>
+  <br>
+  "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient." <br>
+  Surah Al-Baqarah [2:153]
+  <br>
+  <button onclick="openDay4()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
   `💌 <strong>Day 5 – “What I Dream About”</strong><br>
   I think about our future a lot, not in a faraway, someday way, but in a quiet, steady kind of hope.<br>
@@ -86,7 +93,7 @@ const letters = [
 
 // Date Config (Feb = Index 1)
 // --- Date Config & Manual Override ---
-const manuallyUnlocked = []; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
+const manuallyUnlocked = [4]; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
 
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
@@ -197,3 +204,17 @@ document.addEventListener('keydown', (e) => {
     letterText.innerHTML = "";
   }
 });
+function openDay4() {
+  const imageModal = document.getElementById('image-modal');
+  imageModal.classList.remove('hidden');
+  
+  // Optional: Restart the GIF by refreshing the src
+  const gif = document.getElementById('main-gif');
+  const currentSrc = gif.src;
+  gif.src = '';
+  gif.src = currentSrc;
+}
+
+function closeImageModal() {
+  document.getElementById('image-modal').classList.add('hidden');
+}
