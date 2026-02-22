@@ -77,7 +77,7 @@ h1 {
 
 /* Ensure the main letter modal is slightly lower */
 #letter-modal {
-  z-index: 9000;
+  z-index: 9000 !important; 
 }
 .modal-content {
   background: white;
@@ -148,6 +148,7 @@ h1 {
 
 /* Updated Video Modal to match letter-modal size */
 .video-container {
+  z-index: 10001 !important;
   background: white;        /* Match the letter modal background */
   padding: 1.5rem;         /* Match the letter modal padding */
   max-width: 90%;          /* Same as your .modal-content */
@@ -155,6 +156,7 @@ h1 {
   border-radius: 16px;     /* Match the letter modal rounding */
   box-shadow: 0 0 10px #ffcad4;
   position: relative;      /* Keeps the close button positioned correctly */
+  transform: translateZ(0);
 }
 
 #main-video {
@@ -184,7 +186,7 @@ h1 {
 }
 /* === Confetti Layer Fix === */
 canvas {
-  z-index: 9999 !important;
+  z-index: 9500 !important;
   position: fixed;
   top: 0;
   left: 0;
