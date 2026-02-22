@@ -93,7 +93,7 @@ const letters = [
 
 // Date Config (Feb = Index 1)
 // --- Date Config & Manual Override ---
-const manuallyUnlocked = [4]; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
+const manuallyUnlocked = []; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
 
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
