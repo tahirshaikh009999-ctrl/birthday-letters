@@ -17,7 +17,6 @@ body {
 
 /* Optional: Make the "Day X" titles slightly bolder */
 #letter-text strong {
-  padding-bottom: 20px;
   font-weight: 700;
   display: block;
   margin-bottom: 10px;
@@ -83,29 +82,12 @@ h1 {
   background: white;
   padding: 2rem;
   max-width: 90%;
-  
-  /* --- Added for Scrollability --- */
-  max-height: 85vh;          /* Prevents modal from leaving the screen */
-  overflow-y: auto;          /* Enables vertical scroll if content is too long */
-  display: flex;             /* Helps keep content centered */
-  flex-direction: column;
-  /* ------------------------------- */
-
   border-radius: 16px;
   box-shadow: 0 0 10px #ffcad4;
   color: #333;
   font-size: 1rem;
   line-height: 1.6;
   position: relative;
-}
-
-.modal-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-  background-color: #f7b2c4;
-  border-radius: 10px;
 }
 
 #close-btn {
@@ -197,10 +179,4 @@ canvas {
   .container { padding: 1rem; }
   .days .row { flex-wrap: wrap; }
   .modal-content { max-width: 98%; }
-}
-
-@media (max-width: 600px) {
-  #letter-text {
-    margin-top: 15px; /* Gives the 'X' button its own space */
-  }
 }
