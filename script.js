@@ -205,16 +205,18 @@ document.addEventListener('keydown', (e) => {
   }
 });
 function openDay4() {
-  const imageModal = document.getElementById('image-modal');
-  imageModal.classList.remove('hidden');
-  
-  // Optional: Restart the GIF by refreshing the src
-  const gif = document.getElementById('main-gif');
-  const currentSrc = gif.src;
-  gif.src = '';
-  gif.src = currentSrc;
+  console.log("Button clicked!"); // This helps us test in the 'Inspect' console
+  const modal = document.getElementById('image-modal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    modal.style.display = 'flex'; // Forces it to show on desktop
+  } else {
+    console.error("Could not find the element with ID: image-modal");
+  }
 }
 
 function closeImageModal() {
-  document.getElementById('image-modal').classList.add('hidden');
+  const modal = document.getElementById('image-modal');
+  modal.classList.add('hidden');
+  modal.style.display = 'none';
 }
