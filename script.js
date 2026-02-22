@@ -56,7 +56,7 @@ const letters = [
   `💌 <strong>Day 4 – “Thank You for Just Being You”</strong><br>
   I just wanted to let you know how much I appreciate having you in my life and I don't say this enough, but thank you. <br> 
   I cherish all of the moments that we share together, For helping me through the bad times and being there with me celebrate the good times. <br>
-  There aren’t enough words in the dictionary for me to tell you how glad I am to have you in my life. <b>
+  There aren’t enough words in the dictionary for me to tell you how glad I am to have you in my life. <br>
   IDK what I did to deserve someone as wonderful as you maybe feeding the strays made it possible, <br>
   but I am eternally grateful to have your love, support, and your time.
   <br>
