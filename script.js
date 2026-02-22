@@ -205,13 +205,22 @@ document.addEventListener('keydown', (e) => {
   }
 });
 function openDay4() {
-  console.log("Button clicked!"); // This helps us test in the 'Inspect' console
+  console.log("Button clicked!"); 
   const modal = document.getElementById('image-modal');
+  
   if (modal) {
+    // 1. Remove the hidden class
     modal.classList.remove('hidden');
-    modal.style.display = 'flex'; // Forces it to show on desktop
+    
+    // 2. Force the display style to flex (standard for centering modals)
+    modal.style.setProperty('display', 'flex', 'important');
+    
+    // 3. Ensure it's on top of everything
+    modal.style.zIndex = "10001";
+    
+    console.log("Modal should now be visible");
   } else {
-    console.error("Could not find the element with ID: image-modal");
+    console.error("ID 'image-modal' not found in HTML");
   }
 }
 
