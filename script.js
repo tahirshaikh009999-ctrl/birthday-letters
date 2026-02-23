@@ -67,12 +67,17 @@ const letters = [
   <br>
   <button onclick="openDay4()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
-  `💌 <strong>Day 5 – “What I Dream About”</strong><br>
+  `💌 <strong>Day 5 – “The Way You Are”</strong><br>
   I think about our future a lot, not in a faraway, someday way, but in a quiet, steady kind of hope.<br>
   Like morning coffee together, sleepy smiles, long walks with nowhere to go.<br>
   I dream of little things with you, and that’s how I know it’s real.<br>
   No matter where life takes us, I want to keep choosing you.<br>
-  Let’s build something beautiful, one soft day at a time.`,
+  Let’s build something beautiful, one soft day at a time.
+  <br>
+  <br>
+  <br>
+  "And your Lord is going to give you, and you will be satisfied." <br>— Surah Ad-Duha [93:5]
+  <button onclick="openDay5()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
   `💌 <strong>Day 6 – “If You Ever Feel Alone”</strong><br>
   Some days, the world feels too loud or too quiet, and nothing seems to make sense.<br>
@@ -207,17 +212,28 @@ document.addEventListener('keydown', (e) => {
 function openDay4() {
   console.log("Button clicked!"); 
   const modal = document.getElementById('image-modal');
-  
   if (modal) {
     // 1. Remove the hidden class
     modal.classList.remove('hidden');
-    
     // 2. Force the display style to flex (standard for centering modals)
     modal.style.setProperty('display', 'flex', 'important');
-    
     // 3. Ensure it's on top of everything
     modal.style.zIndex = "10001";
-    
+    console.log("Modal should now be visible");
+  } else {
+    console.error("ID 'image-modal' not found in HTML");
+  }
+}
+function openDay5() {
+  console.log("Button clicked!"); 
+  const modal = document.getElementById('image-modal-5');
+  if (modal) {
+    // 1. Remove the hidden class
+    modal.classList.remove('hidden');
+    // 2. Force the display style to flex (standard for centering modals)
+    modal.style.setProperty('display', 'flex', 'important');
+    // 3. Ensure it's on top of everything
+    modal.style.zIndex = "10001";
     console.log("Modal should now be visible");
   } else {
     console.error("ID 'image-modal' not found in HTML");
