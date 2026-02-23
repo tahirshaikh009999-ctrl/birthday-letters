@@ -77,6 +77,7 @@ const letters = [
   <br>
   <br>
   "And your Lord is going to give you, and you will be satisfied." <br>— Surah Ad-Duha [93:5]
+  <br>
   <button onclick="openDay5()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
   `💌 <strong>Day 6 – “If You Ever Feel Alone”</strong><br>
