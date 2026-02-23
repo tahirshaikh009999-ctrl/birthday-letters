@@ -241,6 +241,11 @@ function openDay5() {
   }
 }
 
+function closeImageModal2() {
+  const modal = document.getElementById('image-modal-5');
+  modal.classList.add('hidden');
+  modal.style.display = 'none';
+}
 function closeImageModal() {
   const modal = document.getElementById('image-modal');
   modal.classList.add('hidden');
