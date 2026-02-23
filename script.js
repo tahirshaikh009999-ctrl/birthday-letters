@@ -68,11 +68,11 @@ const letters = [
   <button onclick="openDay4()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
   `💌 <strong>Day 5 – “The Way You Are”</strong><br>
-  I think about our future a lot, not in a faraway, someday way, but in a quiet, steady kind of hope.<br>
-  Like morning coffee together, sleepy smiles, long walks with nowhere to go.<br>
-  I dream of little things with you, and that’s how I know it’s real.<br>
-  No matter where life takes us, I want to keep choosing you.<br>
-  Let’s build something beautiful, one soft day at a time.
+You have soft brunette hair that makes me want to drive fast so I can watch it blow in the wind. You have a gentle infectious laugh that makes me want to be the funniest person in every room.<br>
+You have a rough hug that makes you want to pull away so i'll squeeze even tighter. Your goofey smile makes me laugh every time. You possess a grace that absolutely captivates me. <br>
+Knowing you are in my corner makes every challenge feel smaller and every joy feel bigger. I find myself constantly inspired by your strength and drawn to your warmth<br>
+You have this rare ability to just be present. You’re steady, you’re observant, and you don’t overcomplicate things makes being around you incredibly easy.<br>
+Thank you for the way you are. I don't say it enough, but I see the effort you put into everything, and I don't take a single bit of it for granted.
   <br>
   <br>
   <br>
