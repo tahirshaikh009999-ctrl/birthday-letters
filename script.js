@@ -6,6 +6,7 @@ const videoModal2 = document.getElementById("video-modal-2");
 const mainVideo = document.getElementById("main-video");
 const mainVideo2 = document.getElementById("main-video-2");
 const closeVideoBtn = document.getElementById("close-video-btn");
+const closeVideoBtn2 = document.getElementById("close-video-btn-2");
 // --- Sound Configuration ---
 const popSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3'); 
 const cheerSound = new Audio('https://www.soundjay.com/misc/sounds/cheering-01.mp3');
@@ -211,6 +212,10 @@ closeVideoBtn.addEventListener("click", () => {
   videoModal.classList.add("hidden");
   mainVideo.pause();
   mainVideo.currentTime = 0;
+});
+
+
+closeVideoBtn2.addEventListener("click", () => {
   videoModal2.classList.add("hidden");
   mainVideo2.pause();
   mainVideo2.currentTime = 0;
