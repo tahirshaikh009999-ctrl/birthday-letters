@@ -211,6 +211,9 @@ closeVideoBtn.addEventListener("click", () => {
   videoModal.classList.add("hidden");
   mainVideo.pause();
   mainVideo.currentTime = 0;
+  videoModal2.classList.add("hidden");
+  mainVideo2.pause();
+  mainVideo2.currentTime = 0;
 });
 
 // ESC key functionality to close both modals
