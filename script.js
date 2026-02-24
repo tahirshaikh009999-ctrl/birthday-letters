@@ -3,6 +3,7 @@ const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 const videoModal = document.getElementById("video-modal");
 const mainVideo = document.getElementById("main-video");
+const mainVideo2 = document.getElementById("main-video-2");
 const closeVideoBtn = document.getElementById("close-video-btn");
 // --- Sound Configuration ---
 const popSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3'); 
@@ -200,7 +201,7 @@ document.addEventListener('click', function (e) {
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'view-video-btn-2') {
     videoModal.classList.remove("hidden");
-    mainVideo.play();
+    mainVideo2.play();
   }
 });
 
