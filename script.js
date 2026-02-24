@@ -2,6 +2,7 @@ const modal = document.getElementById("letter-modal");
 const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 const videoModal = document.getElementById("video-modal");
+const videoModal = document.getElementById("video-modal-2");
 const mainVideo = document.getElementById("main-video");
 const mainVideo2 = document.getElementById("main-video-2");
 const closeVideoBtn = document.getElementById("close-video-btn");
