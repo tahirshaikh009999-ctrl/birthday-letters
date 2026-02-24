@@ -23,7 +23,7 @@ const letters = [
   Thank you for being you Madiha!!!!
   <br><br><br>
   "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease." <br>
-  (Surah Ash-Sharh 94:5-6)`,
+  -Surah Ash-Sharh [94:6]`,
 
   `💌 <strong>Day 2 – “A Memory I Love”</strong><br>
   There’s this moment I keep replaying in my head. Us, laughing uncontrollably over something silly.<br>
@@ -34,7 +34,7 @@ const letters = [
   
   <br>
   <br>
-  'If you are grateful, I will surely increase you [in favor]; <br>Surah Ibrahim [14:7]`,
+  'If you are grateful, I will surely increase you [in favor]; <br>-Surah Ibrahim [14:7]`,
 
     `💌 <strong>Day 3 – “For the Days That Feel Heavy”</strong><br>
   If today feels hard, please remember: you don’t have to carry it all alone.<br>
@@ -47,7 +47,7 @@ const letters = [
   <br>
   <br>
   "Allah does not burden a soul beyond that it can bear."<br> 
-  Surah Al-Baqarah (2:286)
+  -Surah Al-Baqarah (2:286)
   <br>
   <button id="view-video-btn" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
     Core memory🎥
@@ -63,7 +63,7 @@ const letters = [
   <br>
   <br>
   "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient." <br>
-  Surah Al-Baqarah [2:153]
+  -Surah Al-Baqarah [2:153]
   <br>
   <button onclick="openDay4()" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;"> small gift 📸</button>`,
 
@@ -84,8 +84,21 @@ Thank you for the way you are. I don't say it enough, but I see the effort you p
   Some days, the world feels too loud or too quiet, and nothing seems to make sense.<br>
   When that happens, I hope you feel the warmth of my love wrap around you like a soft blanket.<br>
   Even when I’m not right beside you, I’m thinking of you.<br>
-  You are never alone. Not truly, not while I’m breathing.<br>
-  You are so loved, in ways you might never fully see but I’ll keep showing you, every day.`,
+  You are never alone. Not truly, not while I’m here.<br>
+  You are so loved, in ways you might never fully see but I’ll keep showing you, every day. <br>
+  If you ever feel alone think of me singing for you at the worst tone possible while making aggressive eye contact,<br>
+  that would be a nightmare for me but it will feel like a warm hug filling space with warmth and comfort and laughter for you.
+  I know that and I pray Allah will give you all the good and genuine things that you deserve so that you will be happy and peacefully gratified and all your worries will go away.
+  <br>
+  <br>
+  <br>
+  "Fear not. Indeed, I am with you both; I hear and I see." <br>
+  — Surah Taha [20:46]
+
+  <br>
+  <button id="view-video-btn-2" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
+    Another core memory🎥
+  </button>`,
 
   `💌 <strong>Day 7 – “You Make Me the Happiest”</strong><br>
   Loving you has been the sweetest, safest, most beautiful adventure of my life.<br>
@@ -179,6 +192,13 @@ document.addEventListener('click', function(e) {
 // Use event delegation to catch the click on the "Watch Video" button
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'view-video-btn') {
+    videoModal.classList.remove("hidden");
+    mainVideo.play();
+  }
+});
+// Use event delegation to catch the click on the "Watch Video" button
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'view-video-btn-2') {
     videoModal.classList.remove("hidden");
     mainVideo.play();
   }
