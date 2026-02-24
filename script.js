@@ -2,7 +2,7 @@ const modal = document.getElementById("letter-modal");
 const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 const videoModal = document.getElementById("video-modal");
-const videoModal = document.getElementById("video-modal-2");
+const videoModal2 = document.getElementById("video-modal-2");
 const mainVideo = document.getElementById("main-video");
 const mainVideo2 = document.getElementById("main-video-2");
 const closeVideoBtn = document.getElementById("close-video-btn");
@@ -201,7 +201,7 @@ document.addEventListener('click', function (e) {
 // Use event delegation to catch the click on the "Watch Video" button
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'view-video-btn-2') {
-    videoModal.classList.remove("hidden");
+    videoModal2.classList.remove("hidden");
     mainVideo2.play();
   }
 });
