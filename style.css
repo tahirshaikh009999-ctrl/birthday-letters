@@ -71,7 +71,7 @@ h1 {
   display: none;
 }
 /* This ensures the video modal always sits on top of everything else */
-#video-modal {
+#video-modal,#video-modal-2 {
   z-index: 10000; 
 }
 
@@ -159,7 +159,7 @@ h1 {
   transform: translateZ(0);
 }
 
-#main-video {
+#main-video, #main-video-2 {
   width: 100%;             /* Fills the container */
   max-height: 70vh;        /* Prevents video from being taller than the screen */
   display: block;
