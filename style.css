@@ -167,7 +167,7 @@ h1 {
   background: black;       /* Black bars only inside the video player if needed */
 }
 
-#close-video-btn {
+#close-video-btn, #close-video-btn-2 {
   position: absolute;      /* Matches the letter modal 'X' placement */
   top: 0.5rem;
   right: 1rem;
