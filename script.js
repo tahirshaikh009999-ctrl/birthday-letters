@@ -286,58 +286,30 @@ function closeImageModal() {
 function triggerDay7() {
     const overlay = document.getElementById('firework-overlay');
     const day7Modal = document.getElementById('day7-modal');
-    const video7 = document.getElementById('video-7');
 
-    // 1. Show dark overlay
     overlay.style.display = 'flex';
 
-    // 2. Start Fireworks Loop (using your confetti library)
     var duration = 6 * 1000;
     var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 21000 };
 
-    function randomInRange(min, max) {
-      return Math.random() * (max - min) + min;
-    }
+    // We set zIndex here to 21000 so it's above the black overlay (20000)
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 21000 }; 
 
     var interval = setInterval(function() {
-      var timeLeft = animationEnd - Date.now();
+        var timeLeft = animationEnd - Date.now();
+        if (timeLeft <= 0) return clearInterval(interval);
 
-      if (timeLeft <= 0) {
-        return clearInterval(interval);
-      }
-
-      var particleCount = 50 * (timeLeft / duration);
-      // random fireworks on left and right
-      confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-      confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+        var particleCount = 50 * (timeLeft / duration);
+        
+        // Fire fireworks
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
     }, 250);
 
-    // 3. Wait 6 seconds, then hide overlay and show modal
     setTimeout(() => {
         overlay.style.display = 'none';
         day7Modal.classList.remove('hidden');
         day7Modal.style.display = 'flex';
-        video7.play();
+        // Auto play the birthday video
+        document.getElementById('video-7').play();
     }, 6000);
-}
-
-// Update your existing day-btn listener to include:
-document.querySelectorAll('.day-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        const day = e.target.getAttribute('data-day');
-        if (day === "7") {
-            triggerDay7();
-        } else {
-            // your existing logic for other days
-        }
-    });
-});
-
-function closeDay7() {
-    const modal = document.getElementById('day7-modal');
-    const video = document.getElementById('video-7');
-    modal.classList.add('hidden');
-    modal.style.display = 'none';
-    video.pause();
 }
