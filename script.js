@@ -107,10 +107,18 @@ Thank you for the way you are. I don't say it enough, but I see the effort you p
     Another core memory🎥
   </button>`,
 
-  `💌 <strong>Day 7 – “Happy Birthday Madiha!!!”</strong><br>
-  
-    <button id="view-video-btn-3" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
-    Happy Birthday🎥
+  `💌 <strong>Day 7 – “Happy Birthday Madiha🍾✨❤️!!!!”</strong><br>
+  Well when you get this HAPPY BIRTHDAY MADIHA! 🎂🍾✨❤️ message. I hope you have a good year ahead and inshallah acheive everything you ever wanted.<br>
+  I hope this Birthday brings you so much happiness and barkat in you life that you forget all the pain you had all this time.<br>
+  I hope you like the video which i my take for as I see you from my eyes (All pretty and Fabulous and Sundar)
+  I wish you the "Happiest Birthday Ever Madiha 🎂🍾✨❤️" and thank you for letting me be a part of it.<br>
+  <br>
+  <br>
+  <strong> Happy Birthday Madiha ❤️!!!</strong>
+  <br>
+  <br>
+  <button id="view-video-btn-3" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
+    🎂🍾❤️ Happy Birthday ❤️🎂🍾
   </button>`
 ];
 
