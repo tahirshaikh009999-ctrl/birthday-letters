@@ -109,7 +109,7 @@ Thank you for the way you are. I don't say it enough, but I see the effort you p
 
   `💌 <strong>Day 7 – “Happy Birthday Madiha!!!”</strong><br>
   
-    <button id="view-video-btn-2" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
+    <button id="view-video-btn-3" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
     Happy Birthday🎥
   </button>`
 ];
