@@ -3,10 +3,14 @@ const letterText = document.getElementById("letter-text");
 const closeBtn = document.getElementById("close-btn");
 const videoModal = document.getElementById("video-modal");
 const videoModal2 = document.getElementById("video-modal-2");
+const videoModal3 = document.getElementById("video-modal-3");
 const mainVideo = document.getElementById("main-video");
 const mainVideo2 = document.getElementById("main-video-2");
+const mainVideo3 = document.getElementById("main-video-3");
 const closeVideoBtn = document.getElementById("close-video-btn");
 const closeVideoBtn2 = document.getElementById("close-video-btn-2");
+const closeVideoBtn3 = document.getElementById("close-video-btn-3");
+
 // --- Sound Configuration ---
 const popSound = new Audio('https://www.soundjay.com/buttons/sounds/button-10.mp3'); 
 const cheerSound = new Audio('https://www.soundjay.com/misc/sounds/cheering-01.mp3');
@@ -103,19 +107,17 @@ Thank you for the way you are. I don't say it enough, but I see the effort you p
     Another core memory🎥
   </button>`,
 
-  `💌 <strong>Day 7 – “You Make Me the Happiest”</strong><br>
-  Loving you has been the sweetest, safest, most beautiful adventure of my life.<br>
-  You make the world feel less scary and my heart feel more whole.<br>
-  Even when I didn’t think I deserved it, you gave me love.<br>
-  I don’t know what I did to meet you, but I thank the universe every single day.<br>
-  You make me the happiest—and I hope I make you feel the same.<br>
-  <span class="egg" data-egg="7" style="font-size:2rem;cursor:pointer;">🎁</span>`
+  `💌 <strong>Day 7 – “Happy Birthday Madiha!!!”</strong><br>
+  
+    <button id="view-video-btn-2" style="background: #ff69b4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-family: 'Dancing Script', cursive; font-size: 1.2rem;">
+    Happy Birthday🎥
+  </button>`
 ];
 
 
 // Date Config (Feb = Index 1)
 // --- Date Config & Manual Override ---
-const manuallyUnlocked = [7]; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
+const manuallyUnlocked = []; // Add any day numbers here you want to unlock early (e.g., Day 3 and Day 5)
 
 const startDate = new Date(2026, 1, 20); 
 const day7UnlockDate = new Date(2026, 1, 26);
@@ -133,38 +135,37 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
     unlockDate.setDate(startDate.getDate() + (day - 1));
   }
 
+  // Check if today is the date OR if the specific day is in our manual list
   const isUnlocked = (today >= unlockDate) || manuallyUnlocked.includes(day);
 
   if (isUnlocked) {
     btn.disabled = false;
     btn.style.opacity = "1";
-    btn.innerText = `Day ${day}`;
+    btn.style.cursor = "pointer";
+    btn.innerText = `Day ${day}`; // Ensures the lock icon is removed
 
     btn.addEventListener("click", () => {
-      // Day 7 Special Logic
-      if (day === 7) {
-        triggerDay7();
-      } 
-      // Days 1-6 Logic
-      else {
-        confetti({
-          particleCount: 150,
-          spread: 70,
-          origin: { y: 0.6 },
-          zIndex: 9999
-        });
-        
-        // Ensure you have your 'letters' array defined above this
-        if (typeof letters !== 'undefined') {
-          letterText.innerHTML = letters[day - 1];
-          modal.classList.remove("hidden");
-        }
-      }
+      popSound.currentTime = 0;
+      cheerSound.currentTime = 0;
+      popSound.play().catch(() => {});
+      cheerSound.play().catch(() => {});
+
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        zIndex: 9999, 
+        colors: ['#ff0000', '#ff69b4', '#ffffff']
+      });
+
+      letterText.innerHTML = letters[day - 1];
+      modal.classList.remove("hidden");
     });
   } else {
     btn.disabled = true;
     btn.innerText = `Day ${day} 🔒`;
     btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
   }
 });
 
@@ -208,6 +209,14 @@ document.addEventListener('click', function (e) {
   }
 });
 
+// Use event delegation to catch the click on the "Watch Video" button
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id === 'view-video-btn-3') {
+    videoModal3.classList.remove("hidden");
+    mainVideo3.play();
+  }
+});
+
 // Close video modal and stop playback
 closeVideoBtn.addEventListener("click", () => {
   videoModal.classList.add("hidden");
@@ -222,21 +231,24 @@ closeVideoBtn2.addEventListener("click", () => {
   mainVideo2.currentTime = 0;
 });
 
+closeVideoBtn3.addEventListener("click", () => {
+  videoModal3.classList.add("hidden");
+  mainVideo3.pause();
+  mainVideo3.currentTime = 0;
+});
+
 // ESC key functionality to close both modals
 document.addEventListener('keydown', (e) => {
   if (e.key === "Escape") {
     // Close Letter Modal
     modal.classList.add("hidden");
-    
     // Close Video Modal
     videoModal.classList.add("hidden");
-    
     // Safety: Stop the video if it was playing
     if (!mainVideo.paused) {
       mainVideo.pause();
       mainVideo.currentTime = 0;
     }
-
     // Optional: Clear the innerHTML to stop any other sounds/videos
     letterText.innerHTML = "";
   }
@@ -281,56 +293,4 @@ function closeImageModal() {
   const modal = document.getElementById('image-modal');
   modal.classList.add('hidden');
   modal.style.display = 'none';
-}
-
-
-// The Birthday Sequence
-function triggerDay7() {
-    const overlay = document.getElementById('firework-overlay');
-    const day7Modal = document.getElementById('day7-modal');
-    const video7 = document.getElementById('video-7');
-
-    overlay.style.display = 'flex';
-
-    let duration = 6 * 1000;
-    let animationEnd = Date.now() + duration;
-    let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 21000 }; 
-
-    let interval = setInterval(function() {
-        let timeLeft = animationEnd - Date.now();
-        if (timeLeft <= 0) return clearInterval(interval);
-
-        let particleCount = 50 * (timeLeft / duration);
-        confetti(Object.assign({}, defaults, { 
-            particleCount, 
-            origin: { x: Math.random(), y: Math.random() - 0.2 } 
-        }));
-    }, 250);
-
-    // After 6 seconds
-    setTimeout(() => {
-        overlay.style.display = 'none';
-        day7Modal.classList.remove('hidden');
-        day7Modal.style.setProperty('display', 'flex', 'important');
-        if(video7) video7.play();
-    }, 6000);
-}
-
-function closeDay7() {
-    const d7m = document.getElementById('day7-modal');
-    const v7 = document.getElementById('video-7');
-    d7m.classList.add('hidden');
-    d7m.style.display = 'none';
-    if(v7) {
-        v7.pause();
-        v7.currentTime = 0;
-    }
-}
-
-// Global Close for Letter Modal
-if(closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      letterText.innerHTML = ""; 
-    });
 }
