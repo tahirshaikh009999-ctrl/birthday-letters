@@ -306,7 +306,7 @@ function closeImageModal() {
 
 function triggerDay7() {
     const overlay = document.getElementById('firework-overlay');
-    const day7Modal = document.getElementById('day7-modal');
+    const day7Modal = document.getElementById('video-modal-3');
     const video7 = document.getElementById('main-video-3');
 
     // 1. Show the dark "Night Sky" overlay
