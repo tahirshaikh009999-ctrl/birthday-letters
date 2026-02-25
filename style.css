@@ -6,6 +6,23 @@ body {
   color: #333;
 }
 
+
+#firework-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9) !important; /* 90% dark to make firework colors pop */
+    z-index: 20000 !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
 #letter-text {
   font-family: 'Dancing Script', cursive;
   font-size: 1.4rem; /* Cursive usually needs to be a bit larger to be readable */
