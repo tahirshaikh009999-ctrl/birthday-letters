@@ -302,3 +302,72 @@ function closeImageModal() {
   modal.classList.add('hidden');
   modal.style.display = 'none';
 }
+
+
+function triggerDay7() {
+    const overlay = document.getElementById('firework-overlay');
+    const day7Modal = document.getElementById('day7-modal');
+    const video7 = document.getElementById('main-video-3');
+
+    // 1. Show the dark "Night Sky" overlay
+    overlay.style.setProperty('display', 'flex', 'important');
+
+    const duration = 6 * 1000; // 6 seconds
+    const animationEnd = Date.now() + duration;
+
+    // 2. The Fireworks Loop
+    const interval = setInterval(function() {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(interval);
+        }
+
+        // Randomly pick a spot on the screen (x: 0 to 1, y: 0 to 1)
+        const randomX = Math.random();
+        const randomY = Math.random() * 0.6; // Keep fireworks in the top 60% of screen
+
+        // Execute a "Firework" burst
+        confetti({
+            particleCount: 40,
+            startVelocity: 30,
+            spread: 360,
+            ticks: 60,
+            origin: { x: randomX, y: randomY },
+            zIndex: 21000, // Higher than the black overlay
+            colors: ['#ff0000', '#ff69b4', '#ffffff', '#ffd700', '#00ffff'], // Festive colors
+            shapes: ['circle'],
+            gravity: 0.5,
+            scalar: 1.2
+        });
+        
+        // Add side-bursts occasionally for extra energy
+        if (timeLeft % 1000 < 250) {
+            confetti({
+                particleCount: 50,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0, y: 0.8 },
+                zIndex: 21000
+            });
+            confetti({
+                particleCount: 50,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1, y: 0.8 },
+                zIndex: 21000
+            });
+        }
+
+    }, 300); // New firework every 0.3 seconds
+
+    // 3. Transition to Video Modal
+    setTimeout(() => {
+        overlay.style.display = 'none';
+        day7Modal.classList.remove('hidden');
+        day7Modal.style.setProperty('display', 'flex', 'important');
+        if(video7) {
+            video7.play();
+        }
+    }, 6000);
+}
