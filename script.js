@@ -357,15 +357,15 @@ function triggerDay7() {
     }, duration);
 }
 
-// Ensure the Close Button for Day 7 works
-const closeVideoBtn3 = document.getElementById("close-video-btn-3");
-if (closeVideoBtn3) {
-    closeVideoBtn3.addEventListener("click", () => {
-        const day7Modal = document.getElementById('video-modal-3');
-        const video7 = document.getElementById('main-video-3');
-        day7Modal.classList.add("hidden");
-        day7Modal.style.display = "none";
-        video7.pause();
-        video7.currentTime = 0;
-    });
-}
+// // Ensure the Close Button for Day 7 works
+// const closeVideoBtn3 = document.getElementById("close-video-btn-3");
+// if (closeVideoBtn3) {
+//     closeVideoBtn3.addEventListener("click", () => {
+//         const day7Modal = document.getElementById('video-modal-3');
+//         const video7 = document.getElementById('main-video-3');
+//         day7Modal.classList.add("hidden");
+//         day7Modal.style.display = "none";
+//         video7.pause();
+//         video7.currentTime = 0;
+//     });
+// }
