@@ -138,7 +138,6 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
   
   if (day === 7) {
     unlockDate = day7UnlockDate;
-    triggerDay7();
   } else {
     unlockDate = new Date(startDate);
     unlockDate.setDate(startDate.getDate() + (day - 1));
