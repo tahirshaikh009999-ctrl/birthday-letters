@@ -133,37 +133,38 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
     unlockDate.setDate(startDate.getDate() + (day - 1));
   }
 
-  // Check if today is the date OR if the specific day is in our manual list
   const isUnlocked = (today >= unlockDate) || manuallyUnlocked.includes(day);
 
   if (isUnlocked) {
     btn.disabled = false;
     btn.style.opacity = "1";
-    btn.style.cursor = "pointer";
-    btn.innerText = `Day ${day}`; // Ensures the lock icon is removed
+    btn.innerText = `Day ${day}`;
 
     btn.addEventListener("click", () => {
-      popSound.currentTime = 0;
-      cheerSound.currentTime = 0;
-      popSound.play().catch(() => {});
-      cheerSound.play().catch(() => {});
-
-      confetti({
-        particleCount: 150,
-        spread: 70,
-        origin: { y: 0.6 },
-        zIndex: 9999, 
-        colors: ['#ff0000', '#ff69b4', '#ffffff']
-      });
-
-      letterText.innerHTML = letters[day - 1];
-      modal.classList.remove("hidden");
+      // Day 7 Special Logic
+      if (day === 7) {
+        triggerDay7();
+      } 
+      // Days 1-6 Logic
+      else {
+        confetti({
+          particleCount: 150,
+          spread: 70,
+          origin: { y: 0.6 },
+          zIndex: 9999
+        });
+        
+        // Ensure you have your 'letters' array defined above this
+        if (typeof letters !== 'undefined') {
+          letterText.innerHTML = letters[day - 1];
+          modal.classList.remove("hidden");
+        }
+      }
     });
   } else {
     btn.disabled = true;
     btn.innerText = `Day ${day} 🔒`;
     btn.style.opacity = "0.5";
-    btn.style.cursor = "not-allowed";
   }
 });
 
@@ -283,33 +284,53 @@ function closeImageModal() {
 }
 
 
+// The Birthday Sequence
 function triggerDay7() {
     const overlay = document.getElementById('firework-overlay');
     const day7Modal = document.getElementById('day7-modal');
+    const video7 = document.getElementById('video-7');
 
     overlay.style.display = 'flex';
 
-    var duration = 6 * 1000;
-    var animationEnd = Date.now() + duration;
+    let duration = 6 * 1000;
+    let animationEnd = Date.now() + duration;
+    let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 21000 }; 
 
-    // We set zIndex here to 21000 so it's above the black overlay (20000)
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 21000 }; 
-
-    var interval = setInterval(function() {
-        var timeLeft = animationEnd - Date.now();
+    let interval = setInterval(function() {
+        let timeLeft = animationEnd - Date.now();
         if (timeLeft <= 0) return clearInterval(interval);
 
-        var particleCount = 50 * (timeLeft / duration);
-        
-        // Fire fireworks
-        confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+        let particleCount = 50 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { 
+            particleCount, 
+            origin: { x: Math.random(), y: Math.random() - 0.2 } 
+        }));
     }, 250);
 
+    // After 6 seconds
     setTimeout(() => {
         overlay.style.display = 'none';
         day7Modal.classList.remove('hidden');
-        day7Modal.style.display = 'flex';
-        // Auto play the birthday video
-        document.getElementById('video-7').play();
+        day7Modal.style.setProperty('display', 'flex', 'important');
+        if(video7) video7.play();
     }, 6000);
+}
+
+function closeDay7() {
+    const d7m = document.getElementById('day7-modal');
+    const v7 = document.getElementById('video-7');
+    d7m.classList.add('hidden');
+    d7m.style.display = 'none';
+    if(v7) {
+        v7.pause();
+        v7.currentTime = 0;
+    }
+}
+
+// Global Close for Letter Modal
+if(closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      letterText.innerHTML = ""; 
+    });
 }
