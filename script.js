@@ -138,6 +138,7 @@ document.querySelectorAll(".day-btn").forEach((btn) => {
   
   if (day === 7) {
     unlockDate = day7UnlockDate;
+    triggerDay7();
   } else {
     unlockDate = new Date(startDate);
     unlockDate.setDate(startDate.getDate() + (day - 1));
@@ -304,18 +305,19 @@ function closeImageModal() {
 }
 
 
+// Function to handle the Day 7 Sequence
 function triggerDay7() {
     const overlay = document.getElementById('firework-overlay');
     const day7Modal = document.getElementById('video-modal-3');
     const video7 = document.getElementById('main-video-3');
 
-    // 1. Show the dark "Night Sky" overlay
+    // 1. Show the dark overlay
     overlay.style.setProperty('display', 'flex', 'important');
 
-    const duration = 6 * 1000; // 6 seconds
+    const duration = 6000; // 6 seconds
     const animationEnd = Date.now() + duration;
 
-    // 2. The Fireworks Loop
+    // 2. Firework Loop (Randomly across the whole screen)
     const interval = setInterval(function() {
         const timeLeft = animationEnd - Date.now();
 
@@ -323,51 +325,47 @@ function triggerDay7() {
             return clearInterval(interval);
         }
 
-        // Randomly pick a spot on the screen (x: 0 to 1, y: 0 to 1)
+        // Random positions for "All Over" effect
+        // x: 0 (left) to 1 (right)
+        // y: 0 (top) to 1 (bottom)
         const randomX = Math.random();
-        const randomY = Math.random() * 0.6; // Keep fireworks in the top 60% of screen
+        const randomY = Math.random() * 0.7; // Concentrated in the top 70% of the screen
 
-        // Execute a "Firework" burst
         confetti({
             particleCount: 40,
             startVelocity: 30,
             spread: 360,
             ticks: 60,
             origin: { x: randomX, y: randomY },
-            zIndex: 21000, // Higher than the black overlay
-            colors: ['#ff0000', '#ff69b4', '#ffffff', '#ffd700', '#00ffff'], // Festive colors
-            shapes: ['circle'],
-            gravity: 0.5,
+            zIndex: 21000, // Forces it above the firework-overlay (20000)
+            colors: ['#ff0000', '#ffd700', '#ff69b4', '#00ffff', '#ffffff'],
             scalar: 1.2
         });
-        
-        // Add side-bursts occasionally for extra energy
-        if (timeLeft % 1000 < 250) {
-            confetti({
-                particleCount: 50,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0, y: 0.8 },
-                zIndex: 21000
-            });
-            confetti({
-                particleCount: 50,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1, y: 0.8 },
-                zIndex: 21000
-            });
-        }
-
     }, 300); // New firework every 0.3 seconds
 
-    // 3. Transition to Video Modal
+    // 3. Transition to Video
     setTimeout(() => {
         overlay.style.display = 'none';
-        day7Modal.classList.remove('hidden');
-        day7Modal.style.setProperty('display', 'flex', 'important');
-        if(video7) {
+        if (day7Modal) {
+            day7Modal.classList.remove('hidden');
+            day7Modal.style.setProperty('display', 'flex', 'important');
+            day7Modal.style.zIndex = '22000'; // Make sure it stays on top
+        }
+        if (video7) {
             video7.play();
         }
-    }, 6000);
+    }, duration);
+}
+
+// Ensure the Close Button for Day 7 works
+const closeVideoBtn3 = document.getElementById("close-video-btn-3");
+if (closeVideoBtn3) {
+    closeVideoBtn3.addEventListener("click", () => {
+        const day7Modal = document.getElementById('video-modal-3');
+        const video7 = document.getElementById('main-video-3');
+        day7Modal.classList.add("hidden");
+        day7Modal.style.display = "none";
+        video7.pause();
+        video7.currentTime = 0;
+    });
 }
