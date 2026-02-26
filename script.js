@@ -110,7 +110,7 @@ Thank you for the way you are. I don't say it enough, but I see the effort you p
   `💌 <strong>Day 7 – “Happy Birthday Madiha🍾✨❤️!!!!”</strong><br>
   Well when you get this HAPPY BIRTHDAY MADIHA! 🎂🍾✨❤️ message. I hope you have a good year ahead and inshallah acheive everything you ever wanted.<br>
   I hope this Birthday brings you so much happiness and barkat in you life that you forget all the pain you had all this time.<br>
-  I hope you like the video which i my take for as I see you from my eyes (All pretty and Fabulous and Sundar)
+  I hope you like the video which in my take is as I see you from my eyes (All pretty and Fabulous and Sundar)
   I wish you the "Happiest Birthday Ever Madiha 🎂🍾✨❤️" and thank you for letting me be a part of it.<br>
   <br>
   <br>
